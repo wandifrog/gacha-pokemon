@@ -22,13 +22,16 @@ export const formatDate = (
   const DAYS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const MONTHS_ID = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
   const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Oktober', 'November', 'December']
+  
+  const days = lang === 'id' ? DAYS_ID : DAYS_EN
+  const month = lang === 'id' ? MONTHS_ID : MONTHS_EN
   const _date = new Date(date)
 
   function formateDateToString(_format: string) {
-    if (_format === 'day') return eval(`DAYS_${lang.toUpperCase()}[_date.getDay()]`)
+    if (_format === 'day') return days[_date.getDay()]
     if (_format === 'date') return _date.getDate()
-    if (_format === 'month') return eval(`MONTHS_${lang.toUpperCase()}[_date.getMonth()].slice(0, 3)`)
-    if (_format === 'fullMonth') return eval(`MONTHS_${lang.toUpperCase()}[_date.getMonth()]`)
+    if (_format === 'month') return month[_date.getMonth()].slice(0, 3)
+    if (_format === 'fullMonth') return month[_date.getMonth()]
     if (_format === 'time') return _date.toLocaleTimeString()
     if (_format === 'year') return _date.getFullYear()
     if (_format === 'c') return ','
