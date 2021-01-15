@@ -1,4 +1,4 @@
-# DX #1
+# Tokopedia mini project
 
 ### [Preview](https://gacha-pokemon.netlify.app/)
 
