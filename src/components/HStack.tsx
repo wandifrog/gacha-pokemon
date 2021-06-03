@@ -3,16 +3,12 @@ import styled from '@emotion/styled'
 import * as CSS from 'csstype'
 import { ComponentMetrics } from '../types/Component'
 
-type PFlexProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
+type HStackProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode
   /**
    * Align items
    */
   align?: CSS.Property.AlignItems
-  /**
-   * Flex Direction
-   */
-  flexDirection?: CSS.Property.FlexDirection
   /**
    * Height
    */
@@ -32,30 +28,28 @@ type PFlexProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
 }
 
 /**
- * Pokemon flex component.
+ * Horizontal Stack component.
  * @example
- * <PFlex>
+ * <HStack>
  *   <div>Hello</div>
  *   <div>wWrld</div>
- * </PFlex>
+ * </HStack>
  */
-const PFlex = ({
+const HStack = ({
   children,
   top,
   bottom,
   align,
-  flexDirection,
   height,
   justify,
   padding,
   style,
   width,
   ...props
-}: PFlexProps): JSX.Element => {
+}: HStackProps): JSX.Element => {
 
   const flexstyle: React.CSSProperties = {
     alignItems: align,
-    flexDirection,
     height,
     justifyContent: justify,
     marginBottom: bottom,
@@ -70,6 +64,7 @@ const PFlex = ({
 
 const Flex = styled.div`
   display: flex;
+  flex-direction: row;
 `
 
-export default PFlex
+export default HStack
