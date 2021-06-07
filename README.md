@@ -1,4 +1,6 @@
-# DX #1
+# Gacha Pokemon
+
+### [Preview](https://gacha-pokemon.netlify.app/)
 
 # Getting Started with Create React App
 
