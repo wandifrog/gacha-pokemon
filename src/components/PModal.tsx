@@ -20,7 +20,7 @@ type PokemonModalProps = {
  */
 const PModal = ({
   children,
-  visible = false
+  visible = false,
 }: PModalProps): JSX.Element | null => {
   const colors = useTheme()
 

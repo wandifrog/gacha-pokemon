@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import React from 'react'
 import PCard from '../components/PCard'
 import PText from '../components/PText'
-import { padding } from '../constants/Metrics.constant'
+import {padding} from '../constants/Metrics.constant'
 import useTranslation from '../hooks/Translation.hook'
-import { getPokemons } from '../queries/Pokemon.query'
+import {getPokemons} from '../queries/Pokemon.query'
 
 const PokemonList = (): JSX.Element => {
-  const { t } = useTranslation()
+  const {t} = useTranslation()
   const [pokemons, setPokemons] = React.useState<Result[]>([])
 
   React.useEffect(() => {

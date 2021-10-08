@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import * as CSS from 'csstype'
-import { ComponentMetrics } from '../types/Component'
+import {ComponentMetrics} from '../types/Component'
 
 type PFlexProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode
@@ -62,7 +62,7 @@ const PFlex = ({
     marginTop: top,
     padding,
     width,
-    ...style
+    ...style,
   }
 
   return <Flex style={flexstyle} {...props}>{children}</Flex>

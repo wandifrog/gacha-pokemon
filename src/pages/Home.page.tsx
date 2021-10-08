@@ -2,22 +2,22 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PFlex from '../components/PFlex'
 import PText from '../components/PText'
-import { fontFamily, fontSize } from '../constants/Fonts.constant'
+import {fontFamily, fontSize} from '../constants/Fonts.constant'
 import useApp from '../hooks/App.hook'
 import useTranslation from '../hooks/Translation.hook'
 
 const Home = (): JSX.Element => {
   const [state, dispatch] = useApp()
-  const { t, language } = useTranslation()
+  const {t, language} = useTranslation()
 
   const [playMusic, setPlayMusic] = React.useState(true)
 
   function _changeTheme() {
-    dispatch({ type: 'CHANGE_THEME' })
+    dispatch({type: 'CHANGE_THEME'})
   }
 
   function _changeLanguage() {
-    dispatch({ type: 'CHANGE_LANGUAGE' })
+    dispatch({type: 'CHANGE_LANGUAGE'})
   }
 
   function _goToTokopedia() {
@@ -37,9 +37,9 @@ const Home = (): JSX.Element => {
       if (playMusic) {
         player.playVideo()
         player.unMute()
-      } else {
+      } else 
         player.pauseVideo()
-      }
+      
     } catch (error) {
       // for passing testing
     }

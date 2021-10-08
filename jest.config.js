@@ -1,7 +1,7 @@
 module.exports = {
   globals: {
     'player': {
-      playVideo: () => {}
-    }
-  }
+      playVideo: () => {},
+    },
+  },
 }

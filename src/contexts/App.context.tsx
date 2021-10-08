@@ -5,7 +5,7 @@ const appContextPersistJson: AppState | null = appContextPersist && JSON.parse(a
 const initialState = appContextPersistJson || {
   darkMode: true,
   language: 'en',
-  myPokemonList: []
+  myPokemonList: [],
 }
 
 const AppStateContext = React.createContext<AppState | undefined>(undefined)
@@ -14,13 +14,13 @@ const AppDispatchContext = React.createContext<AppDispatch | undefined>(undefine
 function appReducer(prevState: AppState, action: AppAction): AppState {
   switch (action.type) {
     case 'CHANGE_THEME': {
-      return { ...prevState, darkMode: !prevState.darkMode }
+      return {...prevState, darkMode: !prevState.darkMode}
     }
     case 'CHANGE_LANGUAGE': {
-      return { ...prevState, language: prevState.language === 'id' ? 'en' : 'id' }
+      return {...prevState, language: prevState.language === 'id' ? 'en' : 'id'}
     }
     case 'UPDATE_MY_POKEMON_LIST': {
-      return { ...prevState, myPokemonList: action.data }
+      return {...prevState, myPokemonList: action.data}
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`)
@@ -28,7 +28,7 @@ function appReducer(prevState: AppState, action: AppAction): AppState {
   }
 }
 
-function AppProvider({ children }: { children: React.ReactNode }): JSX.Element {
+function AppProvider({children}: { children: React.ReactNode }): JSX.Element {
   const [state, dispatch] = React.useReducer(appReducer, initialState)
 
   localStorage.setItem('app-context-persist', JSON.stringify(state))
@@ -42,4 +42,4 @@ function AppProvider({ children }: { children: React.ReactNode }): JSX.Element {
   )
 }
 
-export { AppStateContext, AppDispatchContext, AppProvider, appReducer }
+export {AppStateContext, AppDispatchContext, AppProvider, appReducer}

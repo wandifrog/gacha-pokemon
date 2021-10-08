@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import styled from '@emotion/styled'
 import useTheme from '../hooks/Theme.hook'
 import useTranslation from '../hooks/Translation.hook'
@@ -17,7 +17,7 @@ type ContainerProps = {
  * <PBottomNavigation />
  */
 const PBottomNavigation = (): JSX.Element => {
-  const { language } = useTranslation()
+  const {language} = useTranslation()
   const colors = useTheme()
 
   return (

@@ -5,7 +5,7 @@ export const lightTheme = {
   backgroundTwo: '#F5F5F5',
   text: '#333',
   fancyHeader: '#FFFFFF',
-  fancyHeaderActive: '#757575'
+  fancyHeaderActive: '#757575',
 }
 
 export const darkTheme = {
@@ -15,5 +15,5 @@ export const darkTheme = {
   backgroundTwo: '#616161',
   text: '#BEBEBE',
   fancyHeader: '#FFFFFF',
-  fancyHeaderActive: '#FFEA00'
+  fancyHeaderActive: '#FFEA00',
 }

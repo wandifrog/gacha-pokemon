@@ -51,7 +51,7 @@ const pokemonDetailTranslation = {
     /**
      * - ID: Simpan
      */
-    enter: 'Simpan'
+    enter: 'Simpan',
   },
   en: {
     /**
@@ -105,8 +105,8 @@ const pokemonDetailTranslation = {
     /**
      * - EN: Enter
      */
-    enter: 'Enter'
-  }
+    enter: 'Enter',
+  },
 }
 
 export default pokemonDetailTranslation

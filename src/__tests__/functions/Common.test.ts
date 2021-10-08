@@ -1,4 +1,4 @@
-import { capitalizeEveryWord, gacha } from '../../functions/Common.function'
+import {capitalizeEveryWord, gacha} from '../../functions/Common.function'
 
 test('gacha return correctly', () => {
   const gachaResult = expect(gacha())

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { fontFamily } from '../constants/Fonts.constant'
+import {fontFamily} from '../constants/Fonts.constant'
 import useApp from '../hooks/App.hook'
 import useTheme from '../hooks/Theme.hook'
 
 const outsideState = {
-  activeIndex: -3
+  activeIndex: -3,
 }
 
 /**
@@ -33,13 +33,13 @@ const PFancyHeader = (): JSX.Element => {
 
   return (
     <FancyHeader color={colors.text} darkMode={state.darkMode}>
-      <span style={{ color: ([-3, -1, 0].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>P</span>
-      <span style={{ color: ([-3, -1, 1].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>O</span>
-      <span style={{ color: ([-3, -1, 2].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>K</span>
-      <span style={{ color: ([-3, -1, 3].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>E</span>
-      <span style={{ color: ([-3, -1, 4].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>M</span>
-      <span style={{ color: ([-3, -1, 5].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>O</span>
-      <span style={{ color: ([-3, -1, 6].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader }}>N</span>
+      <span style={{color: ([-3, -1, 0].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>P</span>
+      <span style={{color: ([-3, -1, 1].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>O</span>
+      <span style={{color: ([-3, -1, 2].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>K</span>
+      <span style={{color: ([-3, -1, 3].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>E</span>
+      <span style={{color: ([-3, -1, 4].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>M</span>
+      <span style={{color: ([-3, -1, 5].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>O</span>
+      <span style={{color: ([-3, -1, 6].includes(activeIndex)) ? colors.fancyHeaderActive : colors.fancyHeader}}>N</span>
     </FancyHeader>
   )
 }

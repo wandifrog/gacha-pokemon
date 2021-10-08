@@ -1,18 +1,18 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import styled from '@emotion/styled'
 import PFlex from '../components/PFlex'
 import PModal from '../components/PModal'
 import PPokeBall from '../components/PPokeBall'
 import PText from '../components/PText'
-import { fontFamily, fontSize } from '../constants/Fonts.constant'
-import { images } from '../constants/Images.constant'
-import { padding } from '../constants/Metrics.constant'
-import { gacha, capitalizeEveryWord } from '../functions/Common.function'
+import {fontFamily, fontSize} from '../constants/Fonts.constant'
+import {images} from '../constants/Images.constant'
+import {padding} from '../constants/Metrics.constant'
+import {gacha, capitalizeEveryWord} from '../functions/Common.function'
 import useApp from '../hooks/App.hook'
 import useTheme from '../hooks/Theme.hook'
 import useTranslation from '../hooks/Translation.hook'
-import { getPokemon } from '../queries/Pokemon.query'
+import {getPokemon} from '../queries/Pokemon.query'
 
 type PokemonName = {
   pokemonName: string
@@ -29,8 +29,8 @@ type PokemonDetails = {
 
 const PokemonDetail = (): JSX.Element => {
   const [state, dispatch] = useApp()
-  const { pokemonName }: PokemonName = useParams()
-  const { t } = useTranslation()
+  const {pokemonName}: PokemonName = useParams()
+  const {t} = useTranslation()
   const colors = useTheme()
 
   const [gachaLoading, setGachaLoading] = React.useState(false)
@@ -43,7 +43,7 @@ const PokemonDetail = (): JSX.Element => {
     image: undefined,
     name: '',
     types: [],
-    weight: ''
+    weight: '',
   })
 
   React.useEffect(() => {
@@ -62,12 +62,12 @@ const PokemonDetail = (): JSX.Element => {
       const response = await getPokemon(pokemonName)
       const pokemon = response.data.pokemon
       const newPokemonDetails = {
-        abilities: pokemon.abilities.map(({ ability }) => capitalizeEveryWord(ability.name)),
+        abilities: pokemon.abilities.map(({ability}) => capitalizeEveryWord(ability.name)),
         height: pokemon.height,
         image: pokemon.sprites.front_default,
         name: capitalizeEveryWord(pokemon.name),
-        types: pokemon.types.map(({ type }) => capitalizeEveryWord(type.name)),
-        weight: pokemon.weight
+        types: pokemon.types.map(({type}) => capitalizeEveryWord(type.name)),
+        weight: pokemon.weight,
       }
       setPokemonDetails(newPokemonDetails)
 
@@ -82,18 +82,18 @@ const PokemonDetail = (): JSX.Element => {
     setGachaLoading(true)
     setTimeout(() => {
       setGachaLoading(false)
-      if (gachaResult) {
+      if (gachaResult) 
         setGachaSuccess(true)
-      } else {
+      else 
         setGachaSuccess(false)
-      }
+      
     }, 4000)
   }
 
   const _onKeyEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter') 
       _submitPokemonName()
-    }
+    
   }
 
   const _submitPokemonName = () => {
@@ -104,11 +104,11 @@ const PokemonDetail = (): JSX.Element => {
       date: new Date(),
       givenName: pokemonNameInput.value,
       image: pokemonDetails.image,
-      name: pokemonDetails.name
+      name: pokemonDetails.name,
     }
 
     newMyPokemonList.push(pokemon)
-    dispatch({ type: 'UPDATE_MY_POKEMON_LIST', data: newMyPokemonList })
+    dispatch({type: 'UPDATE_MY_POKEMON_LIST', data: newMyPokemonList})
 
     const pokemonOwnedDb = database.ref(`pokemonOwned/${pokemonName}`)
     pokemonOwnedDb.set(pokemonOwned + 1)

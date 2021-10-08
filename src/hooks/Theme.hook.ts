@@ -1,4 +1,4 @@
-import { darkTheme, lightTheme } from '../constants/Theme.constant'
+import {darkTheme, lightTheme} from '../constants/Theme.constant'
 import useApp from './App.hook'
 
 function useTheme(): Colors {

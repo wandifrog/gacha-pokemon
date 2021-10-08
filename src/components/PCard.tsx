@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
-import { capitalizeEveryWord } from '../functions/Common.function'
+import {Link} from 'react-router-dom'
+import {capitalizeEveryWord} from '../functions/Common.function'
 import useTheme from '../hooks/Theme.hook'
 
 type PCardProps = {
@@ -20,7 +20,7 @@ type PCardProps = {
  * <PCard pokemon={{ name: 'Pikachu', image: 'url image' }} />
  */
 const PCard = ({
-  pokemon
+  pokemon,
 }: PCardProps): JSX.Element => {
   
   const colors = useTheme()

@@ -19,7 +19,7 @@ const myPokemonListTranslation = {
     /**
      * - ID: Hapus
      */
-    remove: 'Hapus'
+    remove: 'Hapus',
   },
   en: {
     /**
@@ -41,8 +41,8 @@ const myPokemonListTranslation = {
     /**
      * - EN: Remove
      */
-    remove: 'Remove'
-  }
+    remove: 'Remove',
+  },
 }
 
 export default myPokemonListTranslation

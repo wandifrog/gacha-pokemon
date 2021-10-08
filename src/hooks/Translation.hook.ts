@@ -7,17 +7,17 @@ import useApp from './App.hook'
 
 function useTranslation() {
   const [state] = useApp()
-  const { language } = state
+  const {language} = state
 
   const t = {
     global: globalTranslation[language],
     home: homeTranslation[language],
     myPokemonList: myPokemonListTranslation[language],
     pokemonDetail: pokemonDetailTranslation[language],
-    pokemonList: pokemonListTranslation[language]
+    pokemonList: pokemonListTranslation[language],
   }
 
-  return { t, language }
+  return {t, language}
 }
 
 export default useTranslation

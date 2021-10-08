@@ -5,5 +5,5 @@ import successGacha from '../assets/images/success-gacha.jpg'
 export const images = {
   failedGacha,
   pokeBall,
-  successGacha
+  successGacha,
 }

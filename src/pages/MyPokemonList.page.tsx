@@ -3,15 +3,15 @@ import styled from '@emotion/styled'
 import PFlex from '../components/PFlex'
 import PModal from '../components/PModal'
 import PText from '../components/PText'
-import { fontFamily, fontSize } from '../constants/Fonts.constant'
-import { padding } from '../constants/Metrics.constant'
+import {fontFamily, fontSize} from '../constants/Fonts.constant'
+import {padding} from '../constants/Metrics.constant'
 import useApp from '../hooks/App.hook'
 import useTranslation from '../hooks/Translation.hook'
-import { formatDate } from '../functions/NotMoment.function'
+import {formatDate} from '../functions/NotMoment.function'
 
 const MyPokemonList = (): JSX.Element => {
   const [state, dispatch] = useApp()
-  const { t, language } = useTranslation()
+  const {t, language} = useTranslation()
 
   const [pokemonIndex, setPokemonIndex] = React.useState(0)
   const [showModal, setShowModal] = React.useState(false)
@@ -29,7 +29,7 @@ const MyPokemonList = (): JSX.Element => {
       pokemonOwnedDb.set(pokemonOwned - 1)
     })
 
-    dispatch({ type: 'UPDATE_MY_POKEMON_LIST', data: newMyPokemonList })
+    dispatch({type: 'UPDATE_MY_POKEMON_LIST', data: newMyPokemonList})
     setShowModal(false)
   }
 

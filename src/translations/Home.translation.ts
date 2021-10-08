@@ -27,7 +27,7 @@ const homeTranslation = {
     /**
      * - ID: Jeda Musik
      */
-    pauseMusic: 'Jeda Musik'
+    pauseMusic: 'Jeda Musik',
   },
   en: {
     /**
@@ -57,8 +57,8 @@ const homeTranslation = {
     /**
      * - EN: Pause Music
      */
-    pauseMusic: 'Pause Music'
-  }
+    pauseMusic: 'Pause Music',
+  },
 }
 
 export default homeTranslation

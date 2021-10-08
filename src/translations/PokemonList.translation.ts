@@ -3,14 +3,14 @@ const pokemonListTranslation = {
     /**
      * - ID: Memuat...
      */
-    loading: 'Memuat...'
+    loading: 'Memuat...',
   },
   en: {
     /**
      * - EN: Loading...
      */
-    loading: 'Loading...'
-  }
+    loading: 'Loading...',
+  },
 }
 
 export default pokemonListTranslation
