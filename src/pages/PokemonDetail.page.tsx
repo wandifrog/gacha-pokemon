@@ -1,10 +1,6 @@
 import React from 'react'
 import {Link, useParams} from 'react-router-dom'
 import styled from '@emotion/styled'
-import PFlex from '../components/PFlex'
-import PModal from '../components/PModal'
-import PPokeBall from '../components/PPokeBall'
-import PText from '../components/PText'
 import {fontFamily, fontSize} from '../constants/Fonts.constant'
 import {images} from '../constants/Images.constant'
 import {padding} from '../constants/Metrics.constant'
@@ -13,6 +9,10 @@ import useApp from '../hooks/App.hook'
 import useTheme from '../hooks/Theme.hook'
 import useTranslation from '../hooks/Translation.hook'
 import {getPokemon} from '../queries/Pokemon.query'
+import HStack from '../components/HStack'
+import PModal from '../components/PModal'
+import PPokeBall from '../components/PPokeBall'
+import Text from '../components/Text'
 
 type PokemonName = {
   pokemonName: string
@@ -119,35 +119,35 @@ const PokemonDetail = (): JSX.Element => {
   const renderGachaLoading = (
     <React.Fragment>
       <PPokeBall />
-      <PText top="15px" bottom="45px" center>{t.pokemonDetail.pleaseWait}</PText>
+      <Text top="15px" bottom="45px" center>{t.pokemonDetail.pleaseWait}</Text>
     </React.Fragment>
   )
 
   const renderSuccessGacha = (
     <React.Fragment>
       <GachaImage src={images.successGacha} />
-      <PText top="10px" bottom="10px" size={fontSize.large} center bold>GOTCHA!</PText>
+      <Text top="10px" bottom="10px" size={fontSize.large} center bold>GOTCHA!</Text>
       <PokemonNameInput placeholder={t.pokemonDetail.inputPlaceholder} color={colors.text}
         onKeyUp={(event) => _onKeyEnter(event)} id="pokemon-name-input" />
-      <PFlex top="30px" padding="0 10px" justify="space-between">
-        <PText font={fontFamily.pokemonSolid} center
-          onClick={() => setShowModal(false)}>{t.pokemonDetail.close}</PText>
-        <PText font={fontFamily.pokemonSolid} center
-          onClick={() => _submitPokemonName()}>{t.pokemonDetail.enter}</PText>
-      </PFlex>
+      <HStack top="30px" padding="0 10px" justify="space-between">
+        <Text font={fontFamily.pokemonSolid} center
+          onClick={() => setShowModal(false)}>{t.pokemonDetail.close}</Text>
+        <Text font={fontFamily.pokemonSolid} center
+          onClick={() => _submitPokemonName()}>{t.pokemonDetail.enter}</Text>
+      </HStack>
     </React.Fragment >
   )
 
   const renderFailedGacha = (
     <React.Fragment>
       <GachaImage src={images.failedGacha} />
-      <PText top="10px" bottom="10px" size={fontSize.large} center>T.T {t.pokemonDetail.failedToCatch} {pokemonDetails.name}</PText>
-      <PFlex top="30px" padding="0 10px" justify="space-between">
-        <PText font={fontFamily.pokemonSolid} center
-          onClick={() => setShowModal(false)}>{t.pokemonDetail.close}</PText>
-        <PText font={fontFamily.pokemonSolid} center
-          onClick={() => _gacha()}>{t.pokemonDetail.tryAgain}</PText>
-      </PFlex>
+      <Text top="10px" bottom="10px" size={fontSize.large} center>T.T {t.pokemonDetail.failedToCatch} {pokemonDetails.name}</Text>
+      <HStack top="30px" padding="0 10px" justify="space-between">
+        <Text font={fontFamily.pokemonSolid} center
+          onClick={() => setShowModal(false)}>{t.pokemonDetail.close}</Text>
+        <Text font={fontFamily.pokemonSolid} center
+          onClick={() => _gacha()}>{t.pokemonDetail.tryAgain}</Text>
+      </HStack>
     </React.Fragment>
   )
 
@@ -162,38 +162,38 @@ const PokemonDetail = (): JSX.Element => {
               : renderFailedGacha
         }
       </PModal>
-      <PFlex justify="center" height="225px">
+      <HStack justify="center" height="225px">
         <PokemonImage src={pokemonDetails.image} />
-      </PFlex>
+      </HStack>
       <Content>
-        <PFlex justify="space-between">
+        <HStack justify="space-between">
           <Link to="/pokemon">
-            <PText size={fontSize.large} font={fontFamily.pokemonSolid}>{t.pokemonDetail.goBack}</PText>
+            <Text size={fontSize.large} font={fontFamily.pokemonSolid}>{t.pokemonDetail.goBack}</Text>
           </Link>
-          <PText size={fontSize.large} font={fontFamily.pokemonSolid}
-            onClick={() => _gacha()}>Gacha</PText>
-        </PFlex>
-        <PText top="20px" size={fontSize.large} center>{pokemonDetails.name}</PText>
-        <PText top="10px" center>
+          <Text size={fontSize.large} font={fontFamily.pokemonSolid}
+            onClick={() => _gacha()}>Gacha</Text>
+        </HStack>
+        <Text top="20px" size={fontSize.large} center>{pokemonDetails.name}</Text>
+        <Text top="10px" center>
           {t.pokemonDetail.owned}:
-          <PText left="5px" span={true}>{pokemonOwned}</PText>
-        </PText>
-        <PText top="10px" center>
+          <Text left="5px" span={true}>{pokemonOwned}</Text>
+        </Text>
+        <Text top="10px" center>
           {t.pokemonDetail.types}:
-          <PText left="5px" span={true}>{pokemonDetails.types.join(', ')}</PText>
-        </PText>
-        <PText top="10px" center>
+          <Text left="5px" span={true}>{pokemonDetails.types.join(', ')}</Text>
+        </Text>
+        <Text top="10px" center>
           {t.pokemonDetail.ability}:
-          <PText left="5px" span={true}>{pokemonDetails.abilities.join(', ')}</PText>
-        </PText>
-        <PText top="10px" center>
+          <Text left="5px" span={true}>{pokemonDetails.abilities.join(', ')}</Text>
+        </Text>
+        <Text top="10px" center>
           {t.pokemonDetail.height}:
-          <PText left="5px" span={true}>{pokemonDetails.height}</PText>
-        </PText>
-        <PText top="10px" center>
+          <Text left="5px" span={true}>{pokemonDetails.height}</Text>
+        </Text>
+        <Text top="10px" center>
           {t.pokemonDetail.weight}:
-          <PText left="5px" span={true}>{pokemonDetails.weight}</PText>
-        </PText>
+          <Text left="5px" span={true}>{pokemonDetails.weight}</Text>
+        </Text>
       </Content>
     </React.Fragment>
   )

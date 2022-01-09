@@ -64,23 +64,23 @@ const Text = ({
   const textStyle: React.CSSProperties = {
     color: color || colors.text,
     cursor: onClick ? 'pointer' : undefined,
-    fontSize: size,
     fontFamily: font,
+    fontSize: size,
     fontStyle: italic ? 'italic' : 'normal',
     fontWeight: bold ? 'bold' : 'normal',
-    textAlign: center ? 'center' : undefined,
-    marginTop: top,
-    marginRight: right,
     marginBottom: bottom,
     marginLeft: left,
+    marginRight: right,
+    marginTop: top,
+    textAlign: center ? 'center' : undefined,
     userSelect: onClick ? 'none' : 'initial',
   }
 
   return React.createElement(
     span ? 'span' : 'div',
     {
-      style: textStyle,
       onClick: () => onClick && onClick(),
+      style: textStyle,
       ...props,
     },
     children

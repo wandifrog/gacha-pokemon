@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import PFlex from '../components/PFlex'
-import PModal from '../components/PModal'
-import PText from '../components/PText'
 import {fontFamily, fontSize} from '../constants/Fonts.constant'
 import {padding} from '../constants/Metrics.constant'
 import useApp from '../hooks/App.hook'
 import useTranslation from '../hooks/Translation.hook'
 import {formatDate} from '../functions/NotMoment.function'
+import HStack from '../components/HStack'
+import PModal from '../components/PModal'
+import Text from '../components/Text'
+import VStack from '../components/VStack'
 
 const MyPokemonList = (): JSX.Element => {
   const [state, dispatch] = useApp()
@@ -41,41 +42,41 @@ const MyPokemonList = (): JSX.Element => {
   return (
     <React.Fragment>
       <PModal visible={showModal}>
-        <PText top="10px" bottom="30px" size={fontSize.normal} center>
+        <Text top="10px" bottom="30px" size={fontSize.normal} center>
           {t.myPokemonList.removeMessage} {state.myPokemonList[pokemonIndex]?.givenName}?
-        </PText>
-        <PFlex top="10px" padding="0 10px" justify="space-between">
-          <PText font={fontFamily.pokemonSolid} center
-            onClick={() => setShowModal(false)}>{t.myPokemonList.cancel}</PText>
-          <PText font={fontFamily.pokemonSolid} center
-            onClick={() => _removePokemon(pokemonIndex)}>{t.myPokemonList.remove}</PText>
-        </PFlex>
+        </Text>
+        <HStack top="10px" padding="0 10px" justify="space-between">
+          <Text font={fontFamily.pokemonSolid} center
+            onClick={() => setShowModal(false)}>{t.myPokemonList.cancel}</Text>
+          <Text font={fontFamily.pokemonSolid} center
+            onClick={() => _removePokemon(pokemonIndex)}>{t.myPokemonList.remove}</Text>
+        </HStack>
       </PModal>
       <Content>
-        <PText bottom="20px" size={fontSize.large} center>{t.myPokemonList.title}</PText>
+        <Text bottom="20px" size={fontSize.large} center>{t.myPokemonList.title}</Text>
         {
           state.myPokemonList.map((pokemon, index) => {
 
             return (
               <PokemonListCard key={index}>
-                <PFlex justify="space-between" align="center">
-                  <PFlex>
+                <HStack justify="space-between" align="center">
+                  <HStack>
                     <PokemonImage src={pokemon.image} title={pokemon.name} />
-                    <PFlex flexDirection="column" justify="center">
-                      <PText>{pokemon.givenName}</PText>
-                      <PText size={fontSize.small}>{formatDate(pokemon.date, 'day c s date s month s year', language)}</PText>
-                    </PFlex>
-                  </PFlex>
-                  <PText right="12px" font={fontFamily.pokemonSolid} bold
-                    onClick={() => _openRemoveModal(index)}>X</PText>
-                </PFlex>
+                    <VStack justify="center">
+                      <Text>{pokemon.givenName}</Text>
+                      <Text size={fontSize.small}>{formatDate(pokemon.date, 'day c s date s month s year', language)}</Text>
+                    </VStack>
+                  </HStack>
+                  <Text right="12px" font={fontFamily.pokemonSolid} bold
+                    onClick={() => _openRemoveModal(index)}>X</Text>
+                </HStack>
               </PokemonListCard>
             )
           })
         }
         {
           state.myPokemonList.length === 0 ? (
-            <PText top="60px" center>{t.myPokemonList.emptyPokemonMessage}</PText>
+            <Text top="60px" center>{t.myPokemonList.emptyPokemonMessage}</Text>
           ) : null
         }
       </Content>

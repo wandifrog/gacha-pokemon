@@ -2,7 +2,7 @@ type AppAction =
 | { type: 'CHANGE_THEME' }
 | { type: 'CHANGE_LANGUAGE' }
 | { type: 'UPDATE_MY_POKEMON_LIST', data: MyPokemon[] }
-| { type: string, data: any }
+| { type: string, data: any } // eslint-disable-line
 
 type AppDispatch = (action: AppAction) => void
 

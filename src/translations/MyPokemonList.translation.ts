@@ -1,47 +1,47 @@
 const myPokemonListTranslation = {
   id: {
     /**
-     * - ID: Daftar Pokemon Saya
+     * - ID: batal
      */
-    title: 'Daftar Pokemon Saya',
+    cancel: 'batal',
     /**
      * - ID: Anda belum memiliki pokemon
      */
     emptyPokemonMessage: 'Anda belum memiliki pokemon',
     /**
+     * - ID: Hapus
+     */
+    remove: 'Hapus',
+    /**
      * - ID: apakah kamu ingin menghapus
      */
     removeMessage: 'apakah kamu ingin menghapus',
     /**
-     * - ID: batal
+     * - ID: Daftar Pokemon Saya
      */
-    cancel: 'batal',
-    /**
-     * - ID: Hapus
-     */
-    remove: 'Hapus',
+    title: 'Daftar Pokemon Saya',
   },
   en: {
-    /**
-     * - EN: My Pokemon List
-     */
-    title: 'My Pokemon List',
-    /**
-     * - EN: You don't have pokemon yet
-     */
-    emptyPokemonMessage: 'You don\'t have pokemon yet',
-    /**
-     * - EN: do you want to remove
-     */
-    removeMessage: 'do you want to remove',
     /**
      * - EN: cancel
      */
     cancel: 'cancel',
     /**
+     * - EN: You don't have pokemon yet
+     */
+    emptyPokemonMessage: 'You don\'t have pokemon yet',
+    /**
      * - EN: Remove
      */
     remove: 'Remove',
+    /**
+     * - EN: do you want to remove
+     */
+    removeMessage: 'do you want to remove',
+    /**
+     * - EN: My Pokemon List
+     */
+    title: 'My Pokemon List',
   },
 }
 

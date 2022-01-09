@@ -5,10 +5,6 @@ const homeTranslation = {
      */
     bilingualButton: 'Klik Saya! untuk mengubah ke',
     /**
-     * - ID: Klik Saya! untuk mengubah
-     */
-    themeButton: 'Klik Saya! untuk mengubah',
-    /**
      * - ID: Tema Gelap
      */
     darkTheme: 'Tema Gelap',
@@ -21,23 +17,23 @@ const homeTranslation = {
      */
     musicButton: 'Klik Saya! untuk',
     /**
+     * - ID: Jeda Musik
+     */
+    pauseMusic: 'Jeda Musik',
+    /**
      * - ID: Memutar Musik
      */
     playMusic: 'Memutar Musik',
     /**
-     * - ID: Jeda Musik
+     * - ID: Klik Saya! untuk mengubah
      */
-    pauseMusic: 'Jeda Musik',
+    themeButton: 'Klik Saya! untuk mengubah',
   },
   en: {
     /**
      * - EN: Click Me! to change
      */
     bilingualButton: 'Click Me! to change',
-    /**
-     * - EN: Click Me! to change
-     */
-    themeButton: 'Click Me! to change',
     /**
      * - EN: Dark Theme
      */
@@ -51,13 +47,17 @@ const homeTranslation = {
      */
     musicButton: 'Click Me! to',
     /**
+     * - EN: Pause Music
+     */
+    pauseMusic: 'Pause Music',
+    /**
      * - EN: Play Music
      */
     playMusic: 'Play Music',
     /**
-     * - EN: Pause Music
+     * - EN: Click Me! to change
      */
-    pauseMusic: 'Pause Music',
+    themeButton: 'Click Me! to change',
   },
 }
 

@@ -45,10 +45,14 @@ const PFancyHeader = (): JSX.Element => {
 }
 
 const FancyHeader = styled.div<{ darkMode: boolean }>`
+  align-items: center;
   color: ${(props) => props.color};
+  display: flex;
   font-family: ${(props) => props.darkMode ? fontFamily.pokemonHollow : fontFamily.pokemonSolid};
   font-size: 30px;
   font-weight: ${(props) => props.darkMode ? 'bold' : 'normal'};
+  height: 72px;
+  justify-content: center;
   letter-spacing: ${(props) => props.darkMode ? '0' : '4px'};
   margin: 0;
   padding: 15px;

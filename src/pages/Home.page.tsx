@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import PFlex from '../components/PFlex'
-import PText from '../components/PText'
 import {fontFamily, fontSize} from '../constants/Fonts.constant'
 import useApp from '../hooks/App.hook'
 import useTranslation from '../hooks/Translation.hook'
+import HStack from '../components/HStack'
+import Text from '../components/Text'
 
 const Home = (): JSX.Element => {
   const [state, dispatch] = useApp()
@@ -12,27 +12,27 @@ const Home = (): JSX.Element => {
 
   const [playMusic, setPlayMusic] = React.useState(true)
 
-  function _changeTheme() {
+  const _changeTheme = () => {
     dispatch({type: 'CHANGE_THEME'})
   }
 
-  function _changeLanguage() {
+  const _changeLanguage = () => {
     dispatch({type: 'CHANGE_LANGUAGE'})
   }
 
-  function _goToTokopedia() {
+  const _goToTokopedia = () => {
     window.open('https://www.tokopedia.com/', '_blank')
   }
 
-  function _goToGithub() {
+  const _goToGithub = () => {
     window.open('https://github.com/wandifrog', '_blank')
   }
 
-  function _goToLinkedIn() {
+  const _goToLinkedIn = () => {
     window.open('https://www.linkedin.com/in/wandi-wandi/', '_blank')
   }
 
-  function _playMusic() {
+  const _playMusic = () => {
     try {
       if (playMusic) {
         player.playVideo()
@@ -49,34 +49,34 @@ const Home = (): JSX.Element => {
   return (
     <React.Fragment>
       <Content>
-        <PText top="60px" size={fontSize.normal} center
+        <Text top="60px" size={fontSize.normal} center
           onClick={() => _changeLanguage()}>
           {t.home.bilingualButton}
-          <PText left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
+          <Text left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
             {language === 'id' ? 'English' : 'Bahasa'}
-          </PText>
-        </PText>
-        <PText top="30px" size={fontSize.normal} center
+          </Text>
+        </Text>
+        <Text top="30px" size={fontSize.normal} center
           onClick={() => _changeTheme()}>
           {t.home.themeButton}
-          <PText left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
+          <Text left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
             {state.darkMode ? t.home.lightTheme : t.home.darkTheme}
-          </PText>
-        </PText>
-        <PText top="30px" size={fontSize.normal} center
+          </Text>
+        </Text>
+        <Text top="30px" size={fontSize.normal} center
           onClick={() => _playMusic()}>
           {t.home.musicButton}
-          <PText left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
+          <Text left="5px" size={fontSize.small} span font={fontFamily.pokemonSolid}>
             {playMusic ? t.home.playMusic : t.home.pauseMusic}
-          </PText>
-        </PText>
+          </Text>
+        </Text>
         <BottomInformation>
-          <PFlex bottom="5px" justify="center" align="center">
-            <PText size={fontSize.small} onClick={() => _goToGithub()}>Github</PText>
-            <PText right="4px" left="4px">|</PText>
-            <PText size={fontSize.small} onClick={() => _goToLinkedIn()}>LinkedIn</PText>
-          </PFlex>
-          <PText bold italic center onClick={() => _goToTokopedia()}>#MulaiAjaDulu</PText>
+          <HStack bottom="5px" justify="center" align="center">
+            <Text size={fontSize.small} onClick={() => _goToGithub()}>Github</Text>
+            <Text right="4px" left="4px">|</Text>
+            <Text size={fontSize.small} onClick={() => _goToLinkedIn()}>LinkedIn</Text>
+          </HStack>
+          <Text bold italic center onClick={() => _goToTokopedia()}>#MulaiAjaDulu</Text>
         </BottomInformation>
       </Content>
     </React.Fragment>

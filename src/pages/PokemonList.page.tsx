@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import PCard from '../components/PCard'
-import PText from '../components/PText'
+import Text from '../components/Text'
 import {padding} from '../constants/Metrics.constant'
 import useTranslation from '../hooks/Translation.hook'
 import {getPokemons} from '../queries/Pokemon.query'
@@ -14,7 +14,7 @@ const PokemonList = (): JSX.Element => {
     _getPokemons()
   }, [])
 
-  async function _getPokemons() {
+  const _getPokemons = async() => {
     try {
       const response = await getPokemons(100, 1)
       const pokemons = response.data.pokemons
@@ -36,7 +36,7 @@ const PokemonList = (): JSX.Element => {
               <GapSpacer />
             </CardContainer>
           )
-          : <PText top="20px" center>{t.pokemonList.loading}</PText>
+          : <Text top="20px" center>{t.pokemonList.loading}</Text>
       }
     </React.Fragment>
   )
