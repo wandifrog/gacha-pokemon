@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import * as CSS from 'csstype'
-import {ComponentMetrics} from '../types/Component'
+import { ComponentMetrics } from 'types/Component';
+import CSS from 'csstype';
+import styled from '@emotion/styled';
 
 type VStackProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode
@@ -30,15 +29,17 @@ type VStackProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
 /**
  * Vertical Stack component.
  * @example
- * <Vstack>
+ * <VStack>
  *   <div>Hello</div>
- *   <div>wWrld</div>
- * </Vstack>
+ *   <div>World</div>
+ * </VStack>
  */
 const VStack = ({
   children,
   top,
+  right,
   bottom,
+  left,
   align,
   height,
   justify,
@@ -48,23 +49,25 @@ const VStack = ({
   ...props
 }: VStackProps): JSX.Element => {
 
-  const flexstyle: React.CSSProperties = {
+  const styVStack: React.CSSProperties = {
     alignItems: align,
     height,
     justifyContent: justify,
     marginBottom: bottom,
+    marginLeft: left,
+    marginRight: right,
     marginTop: top,
     padding,
     width,
     ...style,
-  }
+  };
 
-  return <Flex style={flexstyle} {...props}>{children}</Flex>
-}
+  return <StyledDiv style={styVStack} {...props}>{children}</StyledDiv>;
+};
 
-const Flex = styled.div`
+const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
-export default VStack
+export default VStack;

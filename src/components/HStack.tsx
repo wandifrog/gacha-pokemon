@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import * as CSS from 'csstype'
-import {ComponentMetrics} from '../types/Component'
+import { ComponentMetrics } from 'types/Component';
+import CSS from 'csstype';
+import styled from '@emotion/styled';
 
 type HStackProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode
@@ -38,7 +37,9 @@ type HStackProps = ComponentMetrics & React.HTMLAttributes<HTMLDivElement> & {
 const HStack = ({
   children,
   top,
+  right,
   bottom,
+  left,
   align,
   height,
   justify,
@@ -48,23 +49,25 @@ const HStack = ({
   ...props
 }: HStackProps): JSX.Element => {
 
-  const flexstyle: React.CSSProperties = {
+  const styHStack: React.CSSProperties = {
     alignItems: align,
     height,
     justifyContent: justify,
-    marginBottom: bottom,
     marginTop: top,
+    marginRight: right,
+    marginBottom: bottom,
+    marginLeft: left,
     padding,
     width,
     ...style,
-  }
+  };
 
-  return <Flex style={flexstyle} {...props}>{children}</Flex>
-}
+  return <StyledDiv style={styHStack} {...props}>{children}</StyledDiv>;
+};
 
-const Flex = styled.div`
+const StyledDiv = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
-export default HStack
+export default HStack;
